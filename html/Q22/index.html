@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>POST</title>
+</head>
+
+<body>
+    <h2>合格検定試験調査</h2>
+    <form method="POST" action="print.php">
+        <label for="name">氏名：</label>
+        <input id="name" type="text" name="name" size="15" />
+        <br>
+        <label for="国家試験">国家試験</label>
+        <br>
+        <input id="state_exam" type="checkbox" name="state_exam[]" value="基本情報技術者試験" />基本情報技術者試験
+        <input id="state_exam" type="checkbox" name="state_exam[]" value="応用情報技術者試験" />応用情報技術者試験
+        <br>
+        <label for="サーティファイ情報処理技術者能力認定試験">サーティファイ情報処理技術者能力認定試験</label>
+        <br>
+        <input id="certify_exam" type="checkbox" name="certify_exam[]" value="サーティファイ情報処理技術者能力認定試験１級" />１級
+        <input id="certify_exam" type="checkbox" name="certify_exam[]" value="サーティファイ情報処理技術者能力認定試験２級" />２級
+        <input id="certify_exam" type="checkbox" name="certify_exam[]" value="サーティファイ情報処理技術者能力認定試験３級"  />３級
+        <br>
+        <label for="サーティファイJavaプログラミング能力認定試験">サーティファイJavaプログラミング能力認定試験</label>
+        <br>
+        <input id="certify_java_exam" type="checkbox" name="certify_java_exam[]" value="サーティファイJavaプログラミング能力認定試験１級" />１級
+        <input id="certify_java_exam" type="checkbox" name="certify_java_exam[]" value="サーティファイJavaプログラミング能力認定試験２級" />２級
+        <input id="certify_java_exam" type="checkbox" name="certify_java_exam[]" value="サーティファイJavaプログラミング能力認定試験３級" />３級
+        <br>
+        <input type="submit" value="送信"/>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+version: "3"
+services:
+  # PHP + Apache のコンテナ
+  myapp-web:
+    container_name: myapp-web
+    # 公式 Docker イメージを使用
+    image: php:7.4-apache
+    # 80 ポートをコンテナの 80 ポートにマッピング
+    # (http://localhost/ などで myapp-web コンテナにアクセス)
+    ports:
+      - "80:80"
+    # ローカルの /path/to/your-dir/html フォルダを
+    # コンテナの /var/www/html にマッピング
+    volumes:
+      - ./html:/var/www/html
+
+  # MariaDB のコンテナ
+  myapp-db:
+    container_name: myapp-db
+    image: mariadb:10.5.4
+    volumes:
+      - ./selfphp:/docker-entrypoint-initdb.d
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    environment:
+      # ユーザー名やパスワードなどは適宜変更してください
+      MYSQL_DATABASE: selfphp
+      MYSQL_USER: sample-user
+      MYSQL_PASSWORD: password/
+      MYSQL_ROOT_PASSWORD: password/
+
+  # phpMyAdmin のコンテナ
+  myapp-pma:
+    container_name: myapp-pma
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_HOST: myapp-db
+      # phpMyAdmin でログインするアカウント
+      # (省略するとログインフォーム表示)
+      PMA_USER: sample-user
+      PMA_PASSWORD: password/
+    # 8080 ポートをコンテナの 80 ポートにマッピング
+    # (http://localhost:8080/ などで myapp-pma コンテナにアクセス)
+    ports:
+      - "8080:80"

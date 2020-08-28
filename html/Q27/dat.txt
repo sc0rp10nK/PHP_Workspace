@@ -1,0 +1,2 @@
+マグカップ,up/icon.jpg
+hello,up/icon2.jpg

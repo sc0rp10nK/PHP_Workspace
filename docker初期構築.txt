@@ -1,0 +1,15 @@
+Docker：PHP(学校)の環境構築
+
+最初のみ（作成時）
+$docker-compose up -d
+$ docker exec -it myapp-web bash
+root@*****:/var/www/html# apt-get update
+root@*****:/var/www/html# docker-php-ext-install pdo_mysql
+root@*****:/var/www/html# exit
+$ docker restart myapp-web
+
+MariaDB に接続
+                  コンテナ名
+$ docker exec -it myapp-db bash
+$ mysql -u root -p
+$パスワード

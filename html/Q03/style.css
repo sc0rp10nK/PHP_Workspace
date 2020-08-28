@@ -1,0 +1,19 @@
+td,th{
+    width: 60px;
+}
+#sum{
+    text-align: center;
+}
+div table,div th,div tr,div td{
+    border-collapse: collapse;
+    border: 2px solid lime;
+}
+div td{
+    text-align: right;
+}
+div th{
+    background-color: limegreen;
+}
+div #sum{
+    background-color: limegreen;
+}

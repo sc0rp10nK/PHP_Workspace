@@ -1,0 +1,10 @@
+print '<table border="1">';
+for ($i = 1; $i <= $row; $i++) { //行(掛けられる数)の走査
+    print '<tr>';
+    print '<th>' . $i . 'の段</th>'; //見出し列表示
+    for ($j = 1; $j <= $col; $j++) { //列(掛ける数)の走査
+        print '<td>' . $i * $j . '</td>';
+    }
+    print '</tr>';
+}
+print '</table><br/>';

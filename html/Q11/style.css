@@ -1,0 +1,10 @@
+table,td,tr{
+    border-collapse: collapse;
+    border: 1px solid;
+}
+div th{
+    border-collapse: collapse;
+    border: 1px solid;
+    background-color: lime;
+    text-align: left;
+}

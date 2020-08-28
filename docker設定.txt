@@ -1,0 +1,12 @@
+*phpでdbに接続する際
+    ※dbnameはDockerのコンテナ名にしないといけない
+      $dsn = 'mysql:host=mysql;dbname=myapp-db;charset=utf8';
+      $user = 'selfusr';
+      $password = 'selfpass';
+*ユーザーもlocalhostで作成するとエラー出るので対処方法
+    ちなみ’%’は全てのホストという意味となります。
+    *接続可能なユーザーの作成
+      GRANT ALL ON user_db.* to 'selfusr'@'%' IDENTIFIED BY 'selfpass'
+    *作成済みのユーザーの情報を変更したい場合
+      RENAME USER 'selfusr'@'localhost' to 'selfusr'@'%';
+      FLUSH PRIVILEGES;

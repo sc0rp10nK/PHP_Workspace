@@ -1,0 +1,11 @@
+div #step {
+  width: 80px;
+  text-align: center;
+}
+div #value {
+  width: 50px;
+  text-align: center;
+}
+div #step {
+  background-color: lime;
+}
