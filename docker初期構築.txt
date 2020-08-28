@@ -13,3 +13,6 @@ MariaDB に接続
 $ docker exec -it myapp-db bash
 $ mysql -u root -p
 $パスワード
+
+#dockerのcompose作成者
+https://github.com/DaikiKawaoka
