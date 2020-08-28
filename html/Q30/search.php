@@ -28,27 +28,27 @@
       $order = $_POST['order'];
       switch ($type) {
         case 0:
-          $type = "id";
+          $type = 'id';
           break;
         case 1:
-          $type = "nam";
+          $type = 'nam';
           break;
         case 2:
-          $type = "sex";
+          $type = 'sex';
           break;
         case 3:
-          $type = "old";
+          $type = 'old';
           break;
         case 4:
-          $type = "enter";
+          $type = 'enter';
           break;
       }
       switch ($order) {
         case 0:
-          $order = "ASC";
+          $order = 'ASC';
           break;
         case 1:
-          $order = "DESC";
+          $order = 'DESC';
           break;
       }
       // SQL文の組み立て（クエリの組み立て）
@@ -58,19 +58,19 @@
       //取得したデータを全てフェッチする
       $data = $res->fetchAll();
       // 取得したデータを出力
-      print "<table >";
-      print "  <tr><th>id</th><th>氏名</th><th>性別</th><th>年齢</th><th>登録日</th><th>備考</th></tr>";
+      print '<table >';
+      print '  <tr><th>id</th><th>氏名</th><th>性別</th><th>年齢</th><th>登録日</th><th>備考</th></tr>';
       foreach ($data as $key => $value) {
-        print "<tr>";
+        print '<tr>';
         print "<td>{$value['id']}</td>";
         print "<td>{$value['nam']}</td>";
         print "<td>{$value['sex']}</td>";
         print "<td>{$value['old']}</td>";
         print "<td>{$value['enter']}</td>";
         print "<td>{$value['memo']}</td>";
-        print "</tr>";
+        print '</tr>';
       }
-      print "</table>";
+      print '</table>';
     } catch (PDOException $e) {
       print "エラーメッセージ：{$e->getMessage()}";
     }
